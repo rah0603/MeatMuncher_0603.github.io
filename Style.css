@@ -1,0 +1,81 @@
+:root{
+  --base:#2C5D6D; --brown:#6E4D2C; --sky:#719EAD; --tan:#C3A98F; --paper:#D5E7ED; --ink:#24180b;
+  --display:"Chewy","Comic Sans MS","Chalkboard SE",cursive;
+  --body:"Fredoka","Trebuchet MS",sans-serif;
+  --shadow:6px 6px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:clip;color:var(--paper);font:400 1.0625rem/1.6 var(--body);
+  background-color:var(--base);
+  background-image:radial-gradient(rgb(213 231 237 / .09) 1.5px,transparent 1.6px);
+  background-size:20px 20px}
+:focus-visible{outline:3px dashed var(--paper);outline-offset:4px}
+.hero,main,footer{width:min(100% - 2.5rem,58rem);margin-inline:auto}
+
+/* hero */
+.hero{position:relative;padding:4rem 0 3rem}
+.brand{display:inline-block;margin:0 0 2.5rem;padding:.3rem 1rem;background:var(--paper);color:var(--ink);
+  font:400 1.3rem var(--display);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transform:rotate(-2deg)}
+h1{margin:0;max-width:16ch;font:400 clamp(2.8rem,9vw,5.5rem)/.95 var(--display);letter-spacing:.01em;
+  text-shadow:5px 5px 0 var(--ink);transform:rotate(-1.5deg)}
+.lead{max-width:40ch;margin:2rem 0;font-size:1.2rem}
+.sticker{position:absolute;top:3rem;right:0;width:9rem;height:9rem;display:grid;place-items:center;
+  text-align:center;padding:1rem;background:var(--tan);color:var(--ink);border:3px solid var(--ink);
+  border-radius:50%;box-shadow:var(--shadow);font:400 1.6rem/1 var(--display);transform:rotate(12deg)}
+
+/* buttons */
+.btn,#link-list a{display:inline-block;padding:.75rem 1.5rem;background:var(--tan);color:var(--ink);
+  border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);font:600 1.1rem var(--body);
+  text-decoration:none;transition:transform .12s,box-shadow .12s}
+.btn:hover,#link-list a:hover{transform:translate(3px,3px) rotate(-1deg);box-shadow:2px 2px 0 var(--ink)}
+
+/* sections: headings are strips of tape */
+section{padding:2.5rem 0}
+h2{display:inline-block;margin:0 0 2rem;padding:.2rem 1.2rem;background:var(--tan);color:var(--ink);
+  font:400 1.9rem/1.3 var(--display);box-shadow:3px 3px 0 var(--ink);transform:rotate(-1deg)}
+section:nth-of-type(even) h2{transform:rotate(1deg)}
+
+.sample{margin-bottom:3rem}
+.sample-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.sample-head h3{margin:0;font:400 1.6rem var(--display)}
+.sample-head span{opacity:.8}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.pair>div{padding:1rem;color:var(--ink);border:3px solid var(--ink);box-shadow:var(--shadow)}
+.pair>div.before{background:var(--sky);transform:rotate(-.8deg)}
+.pair>div.after{background:var(--tan);transform:rotate(.8deg)}
+.pair p{margin:0 0 .6rem;font:400 1.4rem var(--display)}
+iframe{display:block;width:100%;height:166px;border:3px solid var(--ink);background:var(--paper)}
+.empty{margin:0}
+
+.single{margin-bottom:2rem;padding:1rem;background:var(--paper);color:var(--ink);
+  border:3px solid var(--ink);box-shadow:var(--shadow);transform:rotate(.4deg)}
+.single:nth-child(even){transform:rotate(-.4deg)}
+
+#picture-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:1.5rem}
+#picture-list img{width:100%;aspect-ratio:4/3;object-fit:cover;padding:.5rem .5rem 1.6rem;background:var(--paper);
+  border:3px solid var(--ink);box-shadow:var(--shadow);transform:rotate(-1deg)}
+#picture-list img:nth-child(even){transform:rotate(1.2deg)}
+
+dl{margin:0;padding:.5rem 1.5rem;background:var(--paper);color:var(--ink);
+  border:3px solid var(--ink);box-shadow:var(--shadow);transform:rotate(-.4deg)}
+dl div{display:grid;grid-template-columns:11rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:3px dotted var(--ink)}
+dl div:last-child{border-bottom:0}
+dt{font:400 1.5rem var(--display)} dd{margin:0}
+
+#contact{margin:2.5rem 0 3rem;padding:2.5rem 2rem;background:var(--brown);
+  border:3px solid var(--ink);box-shadow:var(--shadow)}
+#link-list{display:flex;flex-wrap:wrap;gap:1rem;padding:0;margin:1.5rem 0 0;list-style:none}
+
+footer{padding:0 0 3rem;font:400 1.2rem var(--display)}
+
+@media (max-width:700px){
+  .pair{grid-template-columns:1fr}
+  dl div{grid-template-columns:1fr;gap:.25rem}
+  .hero{padding-top:2.5rem}
+  .sticker{top:.5rem;width:6.5rem;height:6.5rem;font-size:1.15rem;padding:.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,#link-list a{transition:none}
+}
